@@ -1,0 +1,17 @@
+# Chapter 3 - Defining Correctness and Golden Datasets
+# Author: Imran Ahmad
+#
+# The chapter's stack is deliberately evergreen: Pydantic for the data
+# contract, JSONL + git for storage, pandas/matplotlib for the grading
+# analysis. No ML frameworks, no vector stores, no vendor SDKs.
+pydantic>=2.7,<3.0
+pandas>=2.2,<3.0
+matplotlib>=3.8,<4.0
+python-dotenv>=1.0,<2.0
+colorama>=0.4.6,<0.5
+jupyter>=1.0
+ipykernel>=6.29,<7.0
+pytest>=8.0,<9.0
+
+# Optional - only for opt-in Live Mode; Simulation Mode never imports it:
+# openai>=1.40,<3.0

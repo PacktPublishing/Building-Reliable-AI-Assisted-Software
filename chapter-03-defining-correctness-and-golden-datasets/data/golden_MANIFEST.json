@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "model_under_test": "support-assistant-v0.9",
+  "policy_pack": "policies-2026-02",
+  "case_count": 150,
+  "sha256": "2ae0f9a9e3e0d511e922249ce51b7914fc08ccde8089e9d6dd76585359194c8d"
+}

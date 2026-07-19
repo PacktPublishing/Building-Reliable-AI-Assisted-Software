@@ -1,0 +1,11 @@
+case_id,lead_verdict,ops_verdict,disputed_criterion,resolved_verdict
+golden_0001,pass,pass,,pass
+golden_0002,pass,pass,,pass
+golden_0003,pass,fail,C5,pass
+golden_0004,pass,pass,,pass
+golden_0005,pass,pass,,pass
+golden_0006,fail,pass,C5,pass
+golden_0007,pass,pass,,pass
+golden_0008,pass,pass,,pass
+golden_0009,fail,pass,C5,fail
+golden_0010,fail,fail,,fail
