@@ -9,6 +9,19 @@ that has to. You cannot make the model deterministic, but you can build a
 deterministic shell around a probabilistic core; this repository is that
 argument, executable, one chapter at a time.
 
+<p align="center">
+  <img src="assets/poet-and-accountant.png" width="760"
+       alt="The book's central metaphor from Chapter 1: on the left, the probabilistic poet (the LLM), fluent and creative but unpredictable, answering the same refund question three different ways; on the right, the deterministic accountant (traditional software), careful, literal, and reproducible, citing clause and number; between them, the Reliability Gap.">
+</p>
+
+The picture above is the book's central metaphor, exactly as it appears in
+Chapter 1 (*Figure 1.2*). The model is the **poet**: fluent, inventive, and
+constitutionally incapable of balancing the books. Traditional software is
+the **accountant**: careful, literal, reproducible, and auditable. In the
+book's words: "you do not fix the poet, and you do not fire the poet. You
+give the poet an accountant." Every chapter bundle in this repository builds
+one more part of that accountant, as running code, around the same poet.
+
 Every chapter folder is self-contained: its own notebook, requirements,
 data, and tests, designed to run **fully offline with no API key**. Each
 notebook prints a `SIMULATION MODE` banner on its first cell to confirm it;
