@@ -19,6 +19,8 @@ real model.
 
 | Folder | Chapter | Status |
 | --- | --- | --- |
+| `chapter-01-the-reliability-gap/` | 1 · The Reliability Gap | ready |
+| `chapter-02-the-engineering-mindset-for-ai/` | 2 · The Engineering Mindset for AI | ready |
 | `chapter-03-defining-correctness-and-golden-datasets/` | 3 · Defining Correctness and Golden Datasets | ready |
 
 Further chapter folders land here as the book's parts are delivered.
