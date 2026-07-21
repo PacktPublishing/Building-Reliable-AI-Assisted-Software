@@ -79,3 +79,12 @@ onto all four.
 ## License
 
 MIT (see `LICENSE`).
+
+## Standalone notebook editions
+
+Beyond the main chapter notebook, the bundle ships a standalone script and four provider editions of the same walkthrough, all reading the committed data:
+
+- `ch03_golden_dataset.py` — the whole chapter in one linear script (no key, no network)
+- `ch03_golden_dataset_claude.ipynb` · `_openai.ipynb` · `_gemini.ipynb` · `_deepseek_ollama.ipynb` — identical canonical content plus one optional live probe per provider (`requirements-providers.txt`)
+
+Every edition runs fully offline by default and prints the same canonical result: 108/150 = 72%. Live probes are side paths and never feed the canonical numbers.
