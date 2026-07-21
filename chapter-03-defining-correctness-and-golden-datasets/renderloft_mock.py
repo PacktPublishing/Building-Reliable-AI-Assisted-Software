@@ -270,10 +270,10 @@ _CONTEXT_BY_CATEGORY: dict[str, list[str]] = {
 MONEY_BACK_PHRASINGS: dict[str, str] = {
     "golden_0040": "can I get my money back?",
     "golden_0041": "I want a refund.",
-    "golden_0042": "how do I get refunded for my subscription",
+    "golden_0042": "how do I get refunded for my Studio subscription",
     "golden_0043": "money back please - this isn't working for us",
     "golden_0044": "is it possible to undo my purchase?",
-    "golden_0045": "hi, I'd like to return the software",
+    "golden_0045": "hi, I'd like to return Renderloft Studio",
     "golden_0046": "can you reverse the charge on my card from last month?",
     "golden_0047": "We activated six weeks ago. Can we still get our money back?",
     "golden_0048": "I bought this by mistake, can I be reimbursed?",
@@ -773,7 +773,7 @@ class LiveAssistantAdapter:
 
     def __init__(self, model: str | None = None) -> None:
         import os
-        self.model = model or os.getenv("SUPPORT_LIVE_MODEL") or str(
+        self.model = model or os.getenv("RENDERLOFT_LIVE_MODEL") or str(
             CANON["LIVE_MODEL_DEFAULT"])
 
     def respond(self, cid: str) -> dict[str, object]:
@@ -805,7 +805,7 @@ class LiveAssistantAdapter:
 
 
 # --------------------------------------------------------------------------- #
-# Self-test: `python support_mock.py` prints a green pass.                    #
+# Self-test: `python renderloft_mock.py` prints a green pass.                    #
 # --------------------------------------------------------------------------- #
 
 if __name__ == "__main__":
@@ -826,6 +826,6 @@ if __name__ == "__main__":
     a, b = MockSupportAssistant().regenerate_snapshot(), MockSupportAssistant().regenerate_snapshot()
     assert a == b
     log_success(
-        f"support_mock self-test: {len(CASE_PLAN)} cases, "
+        f"renderloft_mock self-test: {len(CASE_PLAN)} cases, "
         f"{plan_fails} scripted failures, snapshot regeneration deterministic."
     )

@@ -18,7 +18,7 @@ import random
 from collections import Counter
 from pathlib import Path
 
-from support_mock import (
+from renderloft_mock import (
     CANON,
     CATEGORIES,
     CRITERIA,

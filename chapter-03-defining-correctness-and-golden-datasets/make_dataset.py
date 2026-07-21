@@ -15,7 +15,7 @@ Running ``python make_dataset.py`` (re)writes everything under ``data/``:
 * ``grades_v1.0.csv``              - the completed hand-grading sheet
 * ``calibration_pass.csv``         - the 10-case double-graded overlap
 
-Every artifact derives from ``support_mock.CASE_PLAN`` under per-item seeds,
+Every artifact derives from ``renderloft_mock.CASE_PLAN`` under per-item seeds,
 so a re-run reproduces every file byte-for-byte. The committed files are the
 artifacts of record; this script is the regeneration proof (and the audit
 trail for how they were authored).
@@ -30,7 +30,7 @@ import json
 from pathlib import Path
 from random import Random
 
-from support_mock import (
+from renderloft_mock import (
     CANON,
     CASE_PLAN,
     CATEGORIES,
@@ -312,7 +312,7 @@ def build_grades() -> list[dict[str, str]]:
         rows.append({
             "case_id": cid,
             "category": category,
-            "grader": "lead" if n % 2 else "ops",
+            "grader": "maya" if n % 2 else "omar",
             "verdict": verdict,
             "failed_criterion": criterion,
             "note": note,
@@ -334,8 +334,8 @@ def build_calibration(grades: dict[str, dict[str, str]]) -> list[dict[str, str]]
         ops_v = final if (n % 2 == 0 or not disputed) else flipped
         rows.append({
             "case_id": cid,
-            "lead_verdict": lead_v,
-            "ops_verdict": ops_v,
+            "maya_verdict": lead_v,
+            "omar_verdict": ops_v,
             "disputed_criterion": "C5" if disputed else "",
             "resolved_verdict": final,
         })

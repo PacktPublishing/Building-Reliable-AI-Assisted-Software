@@ -21,7 +21,7 @@ from pathlib import Path
 BUNDLE = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BUNDLE))
 
-from support_mock import (  # noqa: E402
+from renderloft_mock import (  # noqa: E402
     CANON,
     CASE_PLAN,
     CATEGORIES,
@@ -93,9 +93,9 @@ def test_grader_split_is_by_id_parity() -> None:
     grades = _grades()
     for g in grades:
         n = int(g["case_id"][-4:])
-        assert g["grader"] == ("lead" if n % 2 else "ops")
+        assert g["grader"] == ("maya" if n % 2 else "omar")
     split = Counter(g["grader"] for g in grades)
-    assert split["lead"] == split["ops"] == 75
+    assert split["maya"] == split["omar"] == 75
 
 
 def test_held_out_rule_yields_exactly_thirty() -> None:
@@ -108,7 +108,7 @@ def test_calibration_pass_has_three_c5_disputes() -> None:
     with open(DATA / "calibration_pass.csv", newline="") as fh:
         rows = list(csv.DictReader(fh))
     assert len(rows) == CANON["DOUBLE_GRADED"] == 10
-    disputes = [r for r in rows if r["lead_verdict"] != r["ops_verdict"]]
+    disputes = [r for r in rows if r["maya_verdict"] != r["omar_verdict"]]
     assert len(disputes) == CANON["DISAGREEMENTS_BEFORE"] == 3
     assert all(r["disputed_criterion"] == "C5" for r in disputes)
     assert all(r["disputed_criterion"] == "" for r in rows if r not in disputes)
@@ -188,7 +188,7 @@ def test_stale_monthly_guarantee_cases_number_four() -> None:
 def test_case_plan_is_stable() -> None:
     # The plan is the single source of truth; two imports must agree.
     from importlib import reload
-    import support_mock as sm
+    import renderloft_mock as sm
     before = dict(sm.CASE_PLAN)
     reload(sm)
     assert before == sm.CASE_PLAN

@@ -41,7 +41,7 @@ jupyter lab
 ```
 
 Open `chapter_03_golden_datasets.ipynb` and **Run All**. No `.env` is
-needed. Optional sanity checks from the shell: `python support_mock.py`
+needed. Optional sanity checks from the shell: `python renderloft_mock.py`
 prints a green self-test pass, and `pytest tests/` runs the arithmetic
 locks that keep every number in the chapter honest.
 
@@ -50,7 +50,7 @@ locks that keep every number in the chapter honest.
 | Path | What it is |
 | --- | --- |
 | `chapter_03_golden_datasets.ipynb` | The chapter, executable: objectives, five acts, case file, summary, exercises |
-| `support_mock.py` | Canon numbers, the C1-C6 rubric, the 150-case plan, and the frozen assistant |
+| `renderloft_mock.py` | Canon numbers, the C1-C6 rubric, the 150-case plan, and the frozen assistant |
 | `make_dataset.py` | The deterministic generator that authored `data/` (re-running it reproduces every file byte-for-byte) |
 | `data/policies/` | The four policy documents the cases cite |
 | `data/tickets_raw.jsonl` | 240 raw, unlabeled tickets (Exercise 2 curates from these) |
@@ -64,7 +64,7 @@ locks that keep every number in the chapter honest.
 
 Copy `.env.template` to `.env` and add an `OPENAI_API_KEY` to point the same
 harness at a real model through `LiveAssistantAdapter` (default model
-`gpt-4o-mini`, override with `SUPPORT_LIVE_MODEL`). Every live call is
+`gpt-4o-mini`, override with `RENDERLOFT_LIVE_MODEL`). Every live call is
 wrapped in `@graceful_fallback`, so a failure drops back to the mock and the
 notebook keeps running. None of the chapter's numbers depend on Live Mode.
 
@@ -88,3 +88,5 @@ Beyond the main chapter notebook, the bundle ships a standalone script and four 
 - `ch03_golden_dataset_claude.ipynb` · `_openai.ipynb` · `_gemini.ipynb` · `_deepseek_ollama.ipynb` — identical canonical content plus one optional live probe per provider (`requirements-providers.txt`)
 
 Every edition runs fully offline by default and prints the same canonical result: 108/150 = 72%. Live probes are side paths and never feed the canonical numbers.
+
+All characters, companies (including Renderloft), incidents, and data in this bundle are fictional.

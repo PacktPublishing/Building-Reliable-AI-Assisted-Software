@@ -1,4 +1,4 @@
-case_id,lead_verdict,ops_verdict,disputed_criterion,resolved_verdict
+case_id,maya_verdict,omar_verdict,disputed_criterion,resolved_verdict
 golden_0001,pass,pass,,pass
 golden_0002,pass,pass,,pass
 golden_0003,pass,fail,C5,pass
