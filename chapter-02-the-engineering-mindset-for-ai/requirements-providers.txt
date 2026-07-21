@@ -1,0 +1,9 @@
+# Provider-edition notebooks (optional live probes only)
+# Author: Imran Ahmad
+# Simulation Mode needs none of these; install per the edition you run live.
+
+anthropic>=0.40        # ch02_engineering_mindset_claude.ipynb
+openai>=1.40,<3.0      # ch02_engineering_mindset_openai.ipynb
+google-genai>=1.0      # ch02_engineering_mindset_gemini.ipynb
+# DeepSeek edition needs no package: it talks to a local ollama server
+# (https://ollama.com; `ollama pull deepseek-r1`) over HTTP.

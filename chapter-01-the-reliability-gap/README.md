@@ -48,3 +48,12 @@ sanity checks: `python model_sim.py` prints a self-test line, and
 ## License
 
 MIT (see `LICENSE`).
+
+## Standalone notebook editions
+
+Beyond the main chapter notebook, the bundle ships a standalone script and four provider editions of the same walkthrough:
+
+- `ch01_reliability_gap.py` — the whole chapter in one linear script (no key, no network)
+- `ch01_reliability_gap_claude.ipynb` · `_openai.ipynb` · `_gemini.ipynb` · `_deepseek_ollama.ipynb` — identical canonical content plus one optional live probe per provider (`requirements-providers.txt`)
+
+Every edition runs fully offline by default and reproduces the chapter's canonical numbers. Live probes are side paths and never feed the canonical numbers.
